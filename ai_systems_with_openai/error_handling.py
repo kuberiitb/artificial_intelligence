@@ -6,8 +6,11 @@
 - APITimeoutError
 Solution- Check connection config
 
-Reduce limitis error
+# Reduce limitis error
 - Conflict error, RateLimitError
 Solution: check limit restrictions, ensure rates are in limit.
 
 # Authentication error - key expired   
+
+# Bad request errors 400 - role not in ["system","assistant","user","function"]
+  

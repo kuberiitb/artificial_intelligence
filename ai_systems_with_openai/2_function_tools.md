@@ -35,3 +35,20 @@ response= client.chat.completions.create(
 print(response.choices[0].message.tool_calls[0].function.arguments)
 # example output: {"job":"Data Scientist","location":"San Francisco, CA"}
 ```
+
+# focrefully calling a particular function
+- If function_definition has multiple functions, model will decice which function to call based on the prompt.
+- If you want to forcefully call a particular function, use tool_choice argument.
+- PS: Default value of tool_choice is "auto"
+
+```
+response= client.chat.completions.create(
+  model="gpt-4o-mini",
+  messages=messages,
+  tools=function_definition,
+  # Specify the function to be called for the response
+  tool_choice={"type":"function",
+        "function":{"name":"extract_job_info"}
+        }
+)
+```

@@ -7,7 +7,8 @@ repsonse = client.chat.completions.create(
 	message = [
 		{"role": "user",
 		"content": "Who developed ChatGPT?"}
-	]
+	],
+	response_format={"type":"json_object"}
 )
 print(response.choices[0].message.content)
 # ChatGPT was developed by OpenAI

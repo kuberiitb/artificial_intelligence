@@ -11,8 +11,6 @@ Solution- Check connection config
 Solution: check limit restrictions, ensure rates are in limit.
 
 # Authentication error - key expired   
-```
-  # import openai
 from openai import OpenAI
 client = OpenAI(api_key="<OPENAI_API_TOKEN>")
 # Use the try statement
@@ -26,6 +24,6 @@ try:
 # Use the except statement
 except openai.AuthenticationError:
     print(f"Please double check your authentication key and try again, the one provided is not valid.")
-```
+
 # Bad request errors 400 - role not in ["system","assistant","user","function"]
   

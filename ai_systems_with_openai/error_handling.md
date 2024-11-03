@@ -9,8 +9,7 @@ Solution- Check connection config
 # Reduce limitis error
 - Conflict error
 - RateLimitError
-  - Too many requests
-  - Too much text in the request
+  - Too many requests -- use tenacity
  ```
 # Import the tenacity library
 from tenacity import retry, wait_random_exponential, stop_after_attempt
@@ -26,9 +25,22 @@ def get_response(model, message):
     )
     return response.choices[0].message.content
 print(get_response("gpt-4o-mini", {"role": "user", "content": "List ten holiday destinations."}))
- ```
-- Solution: check limit restrictions, ensure rates are in limit.
+  ```
 
+  - Too much text in the request -- use batching
+  ```
+  client = OpenAI(api_key="<OPENAI_API_TOKEN>")
+  messages = []
+  # Provide a system message and user messages to send the batch
+  messages.append({
+      "role": "system",
+      "content": "convert given weights in kilometers to miles"})
+  # Append measurements to the message
+  [messages.append({"role":"user","content": str(i)}) for i in measurements]
+  
+  response = get_response(messages)
+  print(response)
+  ```
 # Authentication error - key expired   
 ```
 from openai import OpenAI

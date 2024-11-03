@@ -52,3 +52,16 @@ response= client.chat.completions.create(
         }
 )
 ```
+
+# check if function is being called:
+```
+if response.choices[0].finish_reason=='tool_calls':
+  function_call = response.choices[0].message.tool_calls[0].function
+```
+
+# check name of the function being called:
+```
+if response.choices[0].finish_reason=='tool_calls':
+  function_call = response.choices[0].message.tool_calls[0].function
+  print(function_call.name)
+```

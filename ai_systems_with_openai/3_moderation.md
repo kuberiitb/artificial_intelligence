@@ -12,3 +12,11 @@ Feeling like killing someone
 print(moderation_response.results[0].categories.violence)
 # True
 ```
+
+# prompt injection solution
+- limitting amount of text in prompt
+- limiting output tokens
+- Using pre-selected content as validated input and output
+
+# Adding guardrails
+- add a system message adding boudaries like reply with x, y, z if ... else reply "Aplogoies, I don't understand"

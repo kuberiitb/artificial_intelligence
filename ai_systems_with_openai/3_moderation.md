@@ -6,7 +6,7 @@
 - violence
 
 ```
-moderation_response = client.moderation.create(input="""
+moderation_response = client.moderations.create(input="""
 Feeling like killing someone
 """)
 print(moderation_response.results[0].categories.violence)

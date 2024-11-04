@@ -4,3 +4,11 @@
 - self-harm
 - sexual
 - violence
+
+```
+moderation_response = client.moderation.create(input="""
+Feeling like killing someone
+""")
+print(moderation_response.results[0].categories.violence)
+# True
+```

@@ -14,3 +14,26 @@ response = client.embeddings.create(
 print(response.data[0].embedding)
 print(len(response.data[0].embedding))
 ```
+
+### Cosine similarity using embeddings
+
+```
+from openai import OpenAI
+from scipy.spatial.distance import cosine
+
+client = OpenAI(api_key="XYZ")
+
+# Get embeddings for two statements
+response = client.embeddings.create(
+    input=["The burger was fantastic.", "I really enjoyed the burger."],
+    model="text-embedding-ada-002"
+)
+
+# Extract embeddings
+embedding1 = response.data[0].embedding
+embedding2 = response.data[1].embedding
+
+# Compute cosine similarity
+similarity_score = 1 - cosine(embedding1, embedding2)
+print("Cosine similarity between the two statements:", similarity_score)
+```

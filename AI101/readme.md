@@ -9,8 +9,8 @@ You will learn
 
 1. Do the setup [00_setup.md](AI101/00_setup.md)
 
-2. Test your key here [01_test_grok_api_key.ipynb](AI101/01_test_grok_api_key.ipynb)
+2. Test your key here [01_test_grok_api_key.ipynb](01_test_grok_api_key.ipynb)
   
-3. Try your first prompt engineering task [02_sentimet_analysis_ner_example.ipynb](AI101/02_sentimet_analysis_ner_example_prompt_engineering.ipynb)
+3. Try your first prompt engineering task [02_sentimet_analysis_ner_example.ipynb](02_sentimet_analysis_ner_example_prompt_engineering.ipynb)
    
-4. Build LLM Judge using prompt engineering [03_tic_tac_toe_judge.ipynb](AI101/03_tic_tac_toe_judge_prompt_engineering.ipynb)
+4. Build LLM Judge using prompt engineering [03_tic_tac_toe_judge.ipynb](03_tic_tac_toe_judge_prompt_engineering.ipynb)
